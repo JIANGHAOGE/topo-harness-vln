@@ -1,0 +1,17 @@
+model:
+  default: qwen3.6-vl-35b
+  provider: custom
+  base_url: http://127.0.0.1:18011/v1
+  context_length: 65536
+  max_tokens: 1024
+
+agent:
+  max_turns: 20
+
+display:
+  compact: true
+  tool_progress: off
+  show_reasoning: false
+plugins:
+  enabled:
+    - cee-navigation

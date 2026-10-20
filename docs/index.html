@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Topo-Harness-VLN project page and experiment dashboard.">
+  <title>Topo-Harness-VLN</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span class="brand-mark">TH</span> Topo-Harness-VLN</a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#demos">Demos</a>
+        <a href="../">Code</a>
+      </div>
+    </nav>
+    <div class="hero-grid shell" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Semantic topology · skill orchestration · hierarchical verification</p>
+        <h1>Place-conditioned object navigation with an evolving semantic backbone.</h1>
+        <p class="lede">Topo-Harness-VLN turns dense traversability into a sparse semantic graph, ranks places jointly with target evidence, and coordinates PointGoal, ObjectGoal, grounding, and optional instruction-following backends.</p>
+        <div class="actions">
+          <a class="button primary" href="#results">Explore results</a>
+          <a class="button secondary" href="../README.md">Read the repository</a>
+        </div>
+        <dl class="baseline">
+          <div><dt>Stable baseline</dt><dd>2c6d16a</dd></div>
+          <div><dt>Primary task</dt><dd>Place → Object</dd></div>
+          <div><dt>Experiment state</dt><dd id="hero-status">Planned</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-visual">
+        <img src="./assets/semantic-topology.png" alt="Extracted geometric skeleton and topology nodes over a navigation map">
+        <figcaption>A connectivity-preserving skeleton anchors reachable semantic decision points.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="section shell" id="method">
+      <div class="section-heading">
+        <p class="eyebrow">System idea</p>
+        <h2>Geometry tells us where the robot can go. Semantics tells us where it should search.</h2>
+      </div>
+      <div class="pipeline" aria-label="Topo-Harness processing pipeline">
+        <article><span>01</span><h3>Build</h3><p>Extract a sparse skeleton from free space and retain safe geodesic connectivity.</p></article>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <article><span>02</span><h3>Observe</h3><p>Visit backbone nodes and collect panoramic, source-grounded semantic evidence.</p></article>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <article><span>03</span><h3>Rank</h3><p>Jointly score place, object, function, memory, distance, and search history.</p></article>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <article><span>04</span><h3>Verify</h3><p>Check runtime, skill progress, and global completion before moving on.</p></article>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <p class="tag">Semantic backbone</p>
+          <h3>Sparse enough to reason over, grounded enough to navigate.</h3>
+          <p>Nodes come from traversability rather than arbitrary Euclidean proximity. Each node stores place, function, objects, landmarks, affordances, confidence, and provenance.</p>
+        </article>
+        <article class="feature-card">
+          <p class="tag">Joint ranking</p>
+          <h3>Search order is conditioned on both the place and the object.</h3>
+          <p>The system balances semantic relevance against graph cost and previously exhausted regions, producing an ordered exploration sequence.</p>
+        </article>
+        <article class="feature-card">
+          <p class="tag">Harness</p>
+          <h3>Slow reasoning selects; grounding binds; fast control executes.</h3>
+          <p>Typed skill contracts and hierarchical verifiers connect visual reasoning to recoverable, geometrically feasible motion.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section evidence">
+      <div class="shell evidence-grid">
+        <figure>
+          <img src="./assets/panoramic-node.jpg" alt="Panoramic observations collected at one semantic topology node">
+          <figcaption>Panoramic node observation</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">Evolving evidence</p>
+          <h2>A stable graph with task-dependent memory.</h2>
+          <p>The geometric backbone and initial node semantics remain stable while high-confidence object–place observations accumulate over time. This lets later tasks reuse evidence without rebuilding the navigation graph.</p>
+          <div class="formula" aria-label="Semantic graph representation">𝒢<sub>t</sub> = (𝒱, ℰ, 𝒮<sub>0</sub>, ℳ<sub>t</sub>)</div>
+          <p class="fine-print">The stable prototype currently uses confidence-gated persistence for some facts. Complete verifier-gated promotion remains an evaluation target.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="results">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Experiment dashboard</p><h2>Controlled ablations, not decorative leaderboards.</h2></div>
+        <div class="status-pill" id="experiment-status">Awaiting experiments</div>
+      </div>
+      <div class="metric-grid" id="metric-grid" aria-live="polite"></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Variant</th><th>Success ↑</th><th>Path efficiency ↑</th><th>Time to target ↓</th><th>Nodes visited ↓</th><th>False finish ↓</th></tr></thead>
+          <tbody id="ablation-body"></tbody>
+        </table>
+      </div>
+      <p class="fine-print">Values remain pending until the corresponding evaluation has completed.</p>
+    </section>
+
+    <section class="section demos" id="demos">
+      <div class="shell">
+        <div class="section-heading"><p class="eyebrow">Episode gallery</p><h2>Videos connect aggregate metrics to actual robot behavior.</h2></div>
+        <div class="demo-grid" id="demo-grid"></div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="route-card">
+        <div>
+          <p class="eyebrow">Traceability</p>
+          <h2>Every result should point back to an episode.</h2>
+          <p>The gallery links summary metrics, topology snapshots, trajectories, verifier events, and videos without hiding failure cases.</p>
+        </div>
+        <img src="./assets/route-graph.png" alt="Navigation route graph with topology nodes and a global anchor">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><strong>Topo-Harness-VLN</strong><p>Working project page for a stable CEE-AgentOS baseline.</p></div>
+      <div><p>Results are placeholders until experiments are run.</p><p id="last-updated">Last updated: —</p></div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>

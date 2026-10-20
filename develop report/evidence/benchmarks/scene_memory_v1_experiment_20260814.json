@@ -1,0 +1,57 @@
+{
+  "experiment": "hierarchical_scene_memory_v1",
+  "date": "2026-08-14",
+  "instruction": "go to find the bed in bedroom, bedroom is in front of the sofa.",
+  "start_pose": {
+    "x": -1.0496571063995361,
+    "z": 18.657440185546875,
+    "yaw": 0.0
+  },
+  "result": "failed_context_overflow",
+  "failure": "HTTP 400: max_tokens must be at least 1, got -923",
+  "session_id": "20260814_123619_89d1d6",
+  "habitat_log": "logs/hierarchical/20260814_043545",
+  "agent_api_calls": 26,
+  "agent_inference_total_seconds": 85.4,
+  "agent_inference_mean_seconds": 3.285,
+  "completed_navigation_runs": 19,
+  "navigation_errors": 2,
+  "compressions": {
+    "count": 3,
+    "durations_seconds": [15.514, 12.452, 0.035],
+    "total_seconds": 28.001
+  },
+  "user_visible_latency": {
+    "time_to_first_action_seconds": 5.289,
+    "transition_count": 18,
+    "all_transition_mean_seconds": 7.599,
+    "normal_transition_count": 13,
+    "normal_transition_mean_seconds": 4.741,
+    "outliers_seconds": [22.348, 16.34, 10.563, 11.044, 14.859]
+  },
+  "scene_memory": {
+    "unique_scenes": 10,
+    "total_visits": 21,
+    "repeat_visits": 11,
+    "repeat_visit_ratio": 0.5238,
+    "revisited_scenes": 6,
+    "cleared_at_task_end": true
+  },
+  "stable_auto_observe_baseline": {
+    "session_id": "20260814_112753_e54aaa",
+    "result": "success",
+    "completed_navigation_runs": 22,
+    "time_to_first_action_seconds": 3.94,
+    "normal_transition_mean_seconds": 3.333
+  },
+  "decision": "Keep scene-memory v1 as an opt-in experiment and run the stable auto-observe profile by default.",
+  "next_iteration": [
+    "Keep only the newest multimodal observation in active model context.",
+    "Replace repeated full scene-memory indexes with compact scene IDs and short semantic labels.",
+    "Apply revisit penalties in the runtime before anchor selection instead of relying only on prompt guidance."
+  ],
+  "rollback_snapshot": {
+    "path": "artifacts/hierarchical_auto_observe_before_scene_memory_20260814.tar.gz",
+    "sha256": "3e5235583245fd99617ce82d74abcbbe7ab3d9bb1c8fe019dddd6d2e79d3373b"
+  }
+}

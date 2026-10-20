@@ -1,0 +1,70 @@
+{
+  "session_id": "20260814_112753_e54aaa",
+  "instruction": "go to find the bed in bedroom, bedroom is in front of the sofa.",
+  "start_pose": {
+    "x": -1.0496571063995361,
+    "z": 18.657440185546875,
+    "yaw": -0.0
+  },
+  "result": "success",
+  "navigation_runs": 22,
+  "task_wall_clock_seconds": 245.008,
+  "execution_time_excluded_from_transition_metrics": true,
+  "time_to_first_action_seconds": 3.940,
+  "transition_latency": {
+    "samples_total": 21,
+    "mean_including_compression_seconds": 5.058,
+    "median_including_compression_seconds": 3.325,
+    "normal_samples_excluding_material_compression": 19,
+    "normal_mean_seconds": 3.333,
+    "normal_median_seconds": 3.296,
+    "normal_min_seconds": 2.665,
+    "normal_max_seconds": 4.747,
+    "first_four_mean_seconds": 2.780
+  },
+  "normal_transition_decomposition_seconds": {
+    "automatic_post_observation_and_packaging": 0.310,
+    "agent_review_and_next_subtask": 2.032,
+    "anchor_grounding": 0.764,
+    "path_planning_to_first_action": 0.212,
+    "other_dispatch": 0.015,
+    "total": 3.333
+  },
+  "agent_inference": {
+    "calls": 25,
+    "total_seconds": 47.400,
+    "overall_mean_seconds": 1.896,
+    "post_execution_calls": 22,
+    "post_execution_mean_seconds": 2.041,
+    "normal_transition_mean_seconds": 2.032,
+    "startup_calls": 3,
+    "startup_total_seconds": 2.500
+  },
+  "anchor_inference": {
+    "calls": 22,
+    "mean_seconds": 0.759,
+    "median_seconds": 0.749,
+    "min_seconds": 0.568,
+    "max_seconds": 0.964
+  },
+  "context_compression": {
+    "attempts": 3,
+    "durations_seconds": [22.154, 15.408, 0.034],
+    "total_seconds": 37.596,
+    "material_transition_outliers_seconds": [24.820, 18.071]
+  },
+  "observe_calls": {
+    "initial_explicit": 1,
+    "between_navigation_runs_explicit": 0,
+    "automatic_post_execution": 22
+  },
+  "comparison_to_previous_run": {
+    "previous_time_to_first_action_seconds": 5.034,
+    "time_to_first_action_improvement_seconds": 1.094,
+    "time_to_first_action_improvement_percent": 21.74,
+    "previous_normal_transition_mean_seconds": 4.166,
+    "normal_transition_improvement_seconds": 0.833,
+    "normal_transition_improvement_percent": 20.00,
+    "note": "The first-action improvement also reflects one fewer startup Agent/tool-discovery round and is not solely caused by automatic post-execution observation."
+  }
+}

@@ -1,0 +1,6 @@
+name: minimal-vln
+version: 1.0.0
+description: Minimal observe/step interface for agentic vision-and-language navigation.
+provides_tools:
+  - observe
+  - step

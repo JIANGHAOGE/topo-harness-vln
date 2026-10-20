@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cee-agentos"
+version = "0.1.0"
+description = "Independent robot AgentOS harness with schemas, runtime, skills, and LLM providers."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "pydantic>=2.7,<3",
+  "httpx>=0.27,<1",
+  "PyYAML>=5.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=6.2",
+]
+
+[tool.setuptools.packages.find]
+include = ["agentos*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

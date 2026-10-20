@@ -1,0 +1,8 @@
+name: cee-hierarchical
+version: 2.0.0
+description: Portable agent memory and structured task reasoning over shared navigation skills.
+provides_tools:
+  - begin_navigation_task
+  - recall_navigation_memory
+  - advance_navigation
+  - finish_navigation_task

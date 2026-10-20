@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CEE-AgentOS Navigation Relay</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">CLOUD-EDGE-EMBODIED</p>
+        <h1>Navigation Agent Relay</h1>
+      </div>
+      <div class="status"><i id="status-dot"></i><span id="status-label">Waiting for Hermes</span></div>
+    </header>
+
+    <section class="stage">
+      <section class="visuals">
+        <section class="cameras">
+          <figure><img id="left-view" alt="Left camera"><figcaption>LEFT</figcaption></figure>
+          <figure class="front-view">
+            <img id="front-view" alt="Front camera">
+            <figcaption>FRONT</figcaption>
+            <div class="instruction"><span>GLOBAL TASK</span><strong id="instruction">No task dispatched yet</strong></div>
+            <canvas id="trajectory" width="360" height="300"></canvas>
+          </figure>
+          <figure><img id="right-view" alt="Right camera"><figcaption>RIGHT</figcaption></figure>
+        </section>
+        <section class="support-views">
+          <figure class="topdown">
+            <img id="topdown-view" alt="Topdown map">
+            <canvas id="route-graph" aria-label="Sparse route graph"></canvas>
+            <figcaption>TOPDOWN + ROUTE GRAPH</figcaption>
+          </figure>
+          <figure class="anchor-view"><img id="anchor-view" alt="Anchor pixel annotation"><figcaption id="anchor-caption">ANCHOR PIXEL</figcaption></figure>
+        </section>
+      </section>
+      <aside>
+        <dl>
+          <div><dt>Model</dt><dd id="model-label">OmniNav original</dd></div>
+          <div><dt>Agent phase</dt><dd id="agent-phase">idle</dd></div>
+          <div><dt>Subtask</dt><dd id="subtask">n/a</dd></div>
+          <div><dt>Visible anchor</dt><dd id="visible-anchor">n/a</dd></div>
+          <div><dt>Visual confidence</dt><dd id="anchor-confidence">n/a</dd></div>
+          <div><dt>Recovery</dt><dd id="anchor-recovery">n/a</dd></div>
+          <div><dt>Agent calls</dt><dd id="agent-calls">0</dd></div>
+          <div><dt>Memory</dt><dd id="memory-count">0 / 4</dd></div>
+          <div><dt>Route graph</dt><dd id="route-count">0 nodes · 0 edges</dd></div>
+          <div><dt>Skill</dt><dd id="skill-state">idle</dd></div>
+          <div><dt>Controller</dt><dd id="controller">n/a</dd></div>
+          <div><dt>Action</dt><dd id="action">n/a</dd></div>
+          <div><dt>Inference</dt><dd id="latency">n/a</dd></div>
+          <div><dt>Pose</dt><dd id="pose">n/a</dd></div>
+          <div><dt>Observation</dt><dd id="observation-id">n/a</dd></div>
+        </dl>
+      </aside>
+    </section>
+    <footer>Instruction input remains in the Hermes terminal. This page is visualization-only.</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

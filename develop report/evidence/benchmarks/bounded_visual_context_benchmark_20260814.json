@@ -1,0 +1,51 @@
+{
+  "current_session": {
+    "session_id": "20260814_162113_db47b6",
+    "instruction": "go to find the bed in bedroom, bedroom is in front of the sofa.",
+    "result": "incomplete_stopped_in_laundry_room",
+    "api_calls": 20,
+    "successful_navigation_runs": 14,
+    "navigation_validation_errors": 1,
+    "input_tokens": 239515,
+    "output_tokens": 3821,
+    "mean_input_tokens_per_api_call": 11975.75,
+    "peak_input_tokens": 24470,
+    "final_input_tokens": 21266,
+    "full_context_compressions": 0,
+    "active_visual_tool_results": 1,
+    "active_images": 8,
+    "old_image_placeholders": 104
+  },
+  "baseline_session": {
+    "session_id": "20260814_112753_e54aaa",
+    "result": "success",
+    "api_calls": 25,
+    "successful_navigation_runs": 22,
+    "input_tokens": 589771,
+    "output_tokens": 3805,
+    "mean_input_tokens_per_api_call": 23590.84,
+    "peak_input_tokens": 49972,
+    "input_tokens_through_14_navigation_review": 282758,
+    "input_tokens_first_20_calls": 373142,
+    "input_tokens_at_call_20": 33437,
+    "full_context_compressions": 3,
+    "compression_seconds": 37.596
+  },
+  "comparison": {
+    "input_reduction_at_14_navigation_runs_percent": 15.29,
+    "input_reduction_same_first_20_call_count_percent": 35.81,
+    "mean_input_reduction_percent": 49.24,
+    "peak_input_reduction_percent": 51.03,
+    "call_20_input_reduction_percent": 36.40,
+    "raw_total_input_reduction_percent": 59.39,
+    "raw_total_is_not_end_to_end_comparable": true,
+    "reason": "The current run stopped after 14 successful navigation runs while the baseline completed after 22."
+  },
+  "compression_behavior": {
+    "proactive_image_prune_enabled": true,
+    "proactive_image_prune_uses_llm": false,
+    "full_llm_compression_enabled": true,
+    "full_llm_compression_threshold_tokens": 64000,
+    "full_llm_compression_triggered_in_current_run": false
+  }
+}

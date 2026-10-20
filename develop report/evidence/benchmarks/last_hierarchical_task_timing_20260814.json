@@ -1,0 +1,50 @@
+{
+  "source_session": "20260813_175958_96c11f",
+  "source_log": "/home/jianghaoge/CEE-AgentOS/runtime/hierarchical_hermes_home/logs/agent.log",
+  "instruction": "go to find the bed in bedroom, bedroom is in front of the sofa.",
+  "start_pose": {
+    "x": -1.0496571063995361,
+    "z": 18.657440185546875,
+    "yaw": -0.0
+  },
+  "task_wall_clock_seconds": 101.684,
+  "startup": {
+    "instruction_to_first_observation_seconds": 2.956,
+    "instruction_to_first_actionable_subtask_seconds": 3.960,
+    "note": "These are wall-clock readiness metrics and overlap with the first Agent inference calls."
+  },
+  "agent_inference": {
+    "calls": 13,
+    "latencies_seconds": [0.6, 0.8, 0.9, 1.0, 0.9, 1.1, 0.9, 1.2, 1.2, 1.7, 1.4, 1.8, 1.0],
+    "total_seconds": 14.5,
+    "average_seconds": 1.115
+  },
+  "anchor_grounding_inference": {
+    "calls": 5,
+    "estimated_end_to_annotation_latencies_seconds": [0.668, 0.990, 0.737, 0.864, 0.856],
+    "estimated_total_seconds": 4.115,
+    "estimated_average_seconds": 0.823,
+    "note": "Estimated from navigate tool start to anchor annotation file creation; includes small HTTP and annotation-write overhead."
+  },
+  "all_non_compression_llm_inference": {
+    "calls": 18,
+    "estimated_total_seconds": 18.615,
+    "estimated_average_seconds": 1.034
+  },
+  "context_compression": {
+    "calls": 1,
+    "total_seconds": 24.999,
+    "messages_before": 30,
+    "messages_after": 14,
+    "rough_tokens_before": 71048,
+    "rough_tokens_after": 22919,
+    "rough_token_reduction_percent": 67.74
+  },
+  "excluded_execution": {
+    "native_habitat_actions": 144,
+    "navigation_skill_runs": 5,
+    "navigation_tool_wall_clock_seconds": 59.61,
+    "note": "Navigation tool wall time is recorded for traceability but excluded from the requested timing totals because it contains native single-step execution."
+  },
+  "estimated_model_and_compression_wait_seconds": 43.614
+}

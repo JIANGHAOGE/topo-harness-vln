@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimal Interface VLN</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div><p>AGENTIC VLN / ISOLATED</p><h1>Minimal Interface Relay</h1></div>
+      <span id="connection" class="badge">WAITING</span>
+    </header>
+    <section class="stage">
+      <div class="camera-grid">
+        <figure class="camera"><img id="left" alt="Left RGB observation"><figcaption>LEFT · +90°</figcaption></figure>
+        <figure class="camera"><img id="front" alt="Forward RGB observation"><figcaption>FRONT · 0°</figcaption></figure>
+        <figure class="camera"><img id="right" alt="Right RGB observation"><figcaption>RIGHT · -90°</figcaption></figure>
+      </div>
+      <aside>
+        <figure class="map"><img id="topdown" alt="Operational topdown preview"><figcaption>RELAY ONLY · NOT EXPOSED TO AGENT</figcaption></figure>
+        <dl>
+          <div><dt>episode</dt><dd id="episode">n/a</dd></div>
+          <div><dt>status</dt><dd id="status">n/a</dd></div>
+          <div><dt>actions</dt><dd id="actions">0 / 500</dd></div>
+          <div><dt>last action</dt><dd id="last-action">n/a</dd></div>
+          <div><dt>agent input</dt><dd>LEFT · FRONT · RIGHT RGB</dd></div>
+        </dl>
+      </aside>
+    </section>
+    <footer>Each camera: 640 × 480, HFOV 120°, VFOV 90°, height 0.45 m. Pose and topdown are relay-only diagnostics.</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "status": "planned",
+  "updated": "2026-10-20",
+  "metrics": [
+    { "label": "Completed runs", "value": "0" },
+    { "label": "Planned ablations", "value": "5" },
+    { "label": "Reported metrics", "value": "0" },
+    { "label": "Demo episodes", "value": "0" }
+  ],
+  "ablations": [
+    { "variant": "Full Topo-Harness", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
+    { "variant": "No semantic topology", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
+    { "variant": "No joint ranking", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
+    { "variant": "No evolving memory", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
+    { "variant": "Single-level verification", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" }
+  ],
+  "demos": [
+    { "title": "Semantic-node exploration", "description": "Planned: ranked node traversal followed by local object search.", "video": "" },
+    { "title": "Verifier-guided recovery", "description": "Planned: a failed grounding or waypoint followed by bounded recovery.", "video": "" },
+    { "title": "Repeated-task memory", "description": "Planned: compare first search with a later search using stored evidence.", "video": "" }
+  ]
+}

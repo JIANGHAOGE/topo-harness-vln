@@ -1,0 +1,22 @@
+model:
+  default: gemini-3.6-flash
+  provider: gemini
+  base_url: https://generativelanguage.googleapis.com/v1beta
+  supports_vision: true
+  context_length: 1048576
+  max_tokens: 256
+
+agent:
+  max_turns: 200
+  reasoning_effort: low
+
+display:
+  compact: true
+
+plugins:
+  enabled:
+    - minimal-vln
+
+tools:
+  tool_search:
+    enabled: "off"

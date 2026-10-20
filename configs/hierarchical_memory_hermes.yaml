@@ -1,0 +1,28 @@
+model:
+  default: qwen3.6-vl-35b
+  provider: custom
+  base_url: http://127.0.0.1:18011/v1
+  context_length: 65536
+  max_tokens: 384
+  supports_vision: true
+
+custom_providers:
+  - name: local-qwen
+    base_url: http://127.0.0.1:18011/v1
+    model: qwen3.6-vl-35b
+    extra_body:
+      chat_template_kwargs:
+        enable_thinking: false
+
+agent:
+  max_turns: 40
+
+compression:
+  enabled: false
+
+display:
+  compact: true
+
+plugins:
+  enabled:
+    - cee-hierarchical

@@ -1,0 +1,8 @@
+name: cee-navigation
+version: 2.0.0
+description: Thin Hermes client for the server-side ABot-AgentOS Harness.
+provides_tools:
+  - cee_navigation_status
+  - cee_start_agent_task
+  - cee_navigation_task_status
+  - cee_cancel_agent_task

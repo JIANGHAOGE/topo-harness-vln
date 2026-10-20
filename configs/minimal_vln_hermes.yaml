@@ -1,0 +1,29 @@
+model:
+  default: qwen3.6-vl-35b
+  provider: custom
+  base_url: http://127.0.0.1:18011/v1
+  supports_vision: true
+  context_length: 65536
+  max_tokens: 256
+
+custom_providers:
+  - name: local-qwen
+    base_url: http://127.0.0.1:18011/v1
+    model: qwen3.6-vl-35b
+    extra_body:
+      chat_template_kwargs:
+        enable_thinking: false
+
+agent:
+  max_turns: 200
+
+display:
+  compact: true
+
+plugins:
+  enabled:
+    - minimal-vln
+
+tools:
+  tool_search:
+    enabled: "off"

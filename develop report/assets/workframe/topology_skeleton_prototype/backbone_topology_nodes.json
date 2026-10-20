@@ -1,0 +1,104 @@
+{
+  "prototype": true,
+  "map_id": "1st_floor_exh",
+  "source": "/home/jianghaoge/CEE-AgentOS/logs/hierarchical/20260817_104439/observations/0073/topdown.png",
+  "origin_world_xz_m": [
+    -14.679935455322266,
+    -25.174999237060547
+  ],
+  "meters_per_pixel": 0.09018882364034653,
+  "navigable_component_min_area_px": 500,
+  "junction_merge_radius_px": 25,
+  "open_center_min_clearance_px": 15,
+  "skeleton_pixel_count": 1891,
+  "nodes": [
+    {
+      "node_type": "open_space_center",
+      "x_px": 240,
+      "y_px": 298,
+      "clearance_m": 1.78,
+      "radial_branch_count": 5,
+      "branch_support": 3,
+      "node_id": "O01",
+      "world_x_m": 6.965,
+      "world_z_m": 1.701
+    },
+    {
+      "node_type": "open_space_center",
+      "x_px": 148,
+      "y_px": 303,
+      "clearance_m": 1.89,
+      "radial_branch_count": 3,
+      "branch_support": 3,
+      "node_id": "O02",
+      "world_x_m": -1.332,
+      "world_z_m": 2.152
+    },
+    {
+      "node_type": "open_space_center",
+      "x_px": 214,
+      "y_px": 311,
+      "clearance_m": 1.41,
+      "radial_branch_count": 2,
+      "branch_support": 0,
+      "node_id": "O03",
+      "world_x_m": 4.62,
+      "world_z_m": 2.874
+    },
+    {
+      "node_type": "open_space_center",
+      "x_px": 232,
+      "y_px": 386,
+      "clearance_m": 2.09,
+      "radial_branch_count": 7,
+      "branch_support": 7,
+      "node_id": "O04",
+      "world_x_m": 6.244,
+      "world_z_m": 9.638
+    },
+    {
+      "node_type": "open_space_center",
+      "x_px": 167,
+      "y_px": 406,
+      "clearance_m": 1.64,
+      "radial_branch_count": 4,
+      "branch_support": 11,
+      "node_id": "O05",
+      "world_x_m": 0.382,
+      "world_z_m": 11.442
+    },
+    {
+      "node_type": "junction",
+      "x_px": 111,
+      "y_px": 424,
+      "clearance_m": 1.17,
+      "radial_branch_count": 3,
+      "branch_support": 1,
+      "node_id": "J01",
+      "world_x_m": -4.669,
+      "world_z_m": 13.065
+    },
+    {
+      "node_type": "junction",
+      "x_px": 178,
+      "y_px": 453,
+      "clearance_m": 1.05,
+      "radial_branch_count": 5,
+      "branch_support": 8,
+      "node_id": "J02",
+      "world_x_m": 1.374,
+      "world_z_m": 15.681
+    },
+    {
+      "node_type": "junction",
+      "x_px": 209,
+      "y_px": 486,
+      "clearance_m": 0.72,
+      "radial_branch_count": 4,
+      "branch_support": 2,
+      "node_id": "J03",
+      "world_x_m": 4.17,
+      "world_z_m": 18.657
+    }
+  ]
+}
