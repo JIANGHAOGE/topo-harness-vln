@@ -7,6 +7,15 @@
 
 Project page: <https://jianghaoge.github.io/topo-harness-vln/>
 
+The project page now reports the externally reviewed one-scene study: 50
+shared place-object requests across five policies (250 runs), with the same
+valid-completion/invalid-stop/no-completion denominator for every policy. It
+also shows three task-level visual comparisons (B06 semantic node visitation,
+O09 place-object ranking, and L10 verification). These are selected cases;
+the page does not claim cross-building generalization or an isolated
+efficiency gain from graph construction or incremental memory. The public
+runtime remains the stable baseline described below.
+
 Hermes-based robot AgentOS for high-level planning, isolated skill execution,
 three-stage verification, source-grounded memory, recovery, traceability, and
 edge/cloud routing.

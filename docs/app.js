@@ -1,27 +1,6 @@
 (function () {
   "use strict";
-  var fallback = {
-    status: "planned",
-    updated: "2026-10-20",
-    metrics: [
-      { label: "Completed runs", value: "0" },
-      { label: "Planned ablations", value: "5" },
-      { label: "Reported metrics", value: "0" },
-      { label: "Demo episodes", value: "0" }
-    ],
-    ablations: [
-      { variant: "Full Topo-Harness", success: "TBD", efficiency: "TBD", time: "TBD", nodes: "TBD", falseFinish: "TBD" },
-      { variant: "No semantic topology", success: "TBD", efficiency: "TBD", time: "TBD", nodes: "TBD", falseFinish: "TBD" },
-      { variant: "No joint ranking", success: "TBD", efficiency: "TBD", time: "TBD", nodes: "TBD", falseFinish: "TBD" },
-      { variant: "No evolving memory", success: "TBD", efficiency: "TBD", time: "TBD", nodes: "TBD", falseFinish: "TBD" },
-      { variant: "Single-level verification", success: "TBD", efficiency: "TBD", time: "TBD", nodes: "TBD", falseFinish: "TBD" }
-    ],
-    demos: [
-      { title: "Semantic-node exploration", description: "Planned: ranked node traversal followed by local object search.", video: "" },
-      { title: "Verifier-guided recovery", description: "Planned: a failed grounding or waypoint followed by bounded recovery.", video: "" },
-      { title: "Repeated-task memory", description: "Planned: compare first search with a later search using stored evidence.", video: "" }
-    ]
-  };
+  var fallback = { status: "unavailable", updated: "—", metrics: [], ablations: [], demos: [] };
 
   function text(value) {
     return String(value == null ? "TBD" : value);
@@ -30,7 +9,7 @@
   function render(data) {
     var status = text(data.status || "planned");
     document.getElementById("experiment-status").textContent =
-      status === "complete" ? "Experiments complete" : status === "running" ? "Experiments running" : "Awaiting experiments";
+      status === "complete" ? "250 runs reviewed · one scene" : "Results unavailable";
     document.getElementById("hero-status").textContent = status.charAt(0).toUpperCase() + status.slice(1);
     document.getElementById("last-updated").textContent = "Last updated: " + text(data.updated);
 
@@ -54,7 +33,7 @@
     body.innerHTML = "";
     (data.ablations || []).forEach(function (row) {
       var tr = document.createElement("tr");
-      ["variant", "success", "efficiency", "time", "nodes", "falseFinish"].forEach(function (key) {
+      ["variant", "valid", "invalid", "noCompletion"].forEach(function (key) {
         var td = document.createElement("td");
         td.textContent = text(row[key]);
         if (td.textContent === "TBD") td.className = "pending";
@@ -68,7 +47,19 @@
     (data.demos || []).forEach(function (demo) {
       var card = document.createElement("article");
       card.className = "demo-card";
-      if (demo.video) {
+      if (demo.image) {
+        var imageLink = document.createElement("a");
+        imageLink.href = demo.image;
+        imageLink.target = "_blank";
+        imageLink.rel = "noopener noreferrer";
+        imageLink.className = "demo-image-link";
+        var image = document.createElement("img");
+        image.src = demo.image;
+        image.alt = text(demo.alt);
+        image.loading = "lazy";
+        imageLink.appendChild(image);
+        card.appendChild(imageLink);
+      } else if (demo.video) {
         var video = document.createElement("video");
         video.controls = true;
         video.preload = "metadata";
@@ -77,17 +68,30 @@
       } else {
         var placeholder = document.createElement("div");
         placeholder.className = "video-placeholder";
-        placeholder.textContent = "Episode video pending";
+        placeholder.textContent = "Media unavailable";
         card.appendChild(placeholder);
       }
       var copy = document.createElement("div");
       copy.className = "demo-copy";
+      var theme = document.createElement("p");
+      theme.className = "demo-theme";
+      theme.textContent = text(demo.theme) + " · " + text(demo.id);
       var heading = document.createElement("h3");
       heading.textContent = text(demo.title);
       var paragraph = document.createElement("p");
       paragraph.textContent = text(demo.description);
+      copy.appendChild(theme);
       copy.appendChild(heading);
       copy.appendChild(paragraph);
+      if (demo.image) {
+        var fullImage = document.createElement("a");
+        fullImage.href = demo.image;
+        fullImage.target = "_blank";
+        fullImage.rel = "noopener noreferrer";
+        fullImage.className = "demo-open";
+        fullImage.textContent = "Open full-resolution evidence ↗";
+        copy.appendChild(fullImage);
+      }
       card.appendChild(copy);
       demoGrid.appendChild(card);
     });

@@ -1,22 +1,44 @@
 {
-  "status": "planned",
-  "updated": "2026-10-20",
+  "status": "complete",
+  "updated": "2026-10-26",
+  "scope": "One first-floor exhibition scene; 50 paired place-object requests; five policies; nine reused physical targets.",
   "metrics": [
-    { "label": "Completed runs", "value": "0" },
-    { "label": "Planned ablations", "value": "5" },
-    { "label": "Reported metrics", "value": "0" },
-    { "label": "Demo episodes", "value": "0" }
+    { "label": "Externally reviewed runs", "value": "250 / 250" },
+    { "label": "Paired requests", "value": "50" },
+    { "label": "Full-policy valid completion", "value": "45 / 50" },
+    { "label": "Full-policy invalid stops", "value": "2 / 50" }
   ],
   "ablations": [
-    { "variant": "Full Topo-Harness", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
-    { "variant": "No semantic topology", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
-    { "variant": "No joint ranking", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
-    { "variant": "No evolving memory", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" },
-    { "variant": "Single-level verification", "success": "TBD", "efficiency": "TBD", "time": "TBD", "nodes": "TBD", "falseFinish": "TBD" }
+    { "variant": "G: geometry order", "valid": "9 / 50 (18%)", "invalid": "17 / 50 (34%)", "noCompletion": "24 / 50 (48%)" },
+    { "variant": "P: place-only rank", "valid": "41 / 50 (82%)", "invalid": "5 / 50 (10%)", "noCompletion": "4 / 50 (8%)" },
+    { "variant": "O: object-only rank", "valid": "32 / 50 (64%)", "invalid": "8 / 50 (16%)", "noCompletion": "10 / 50 (20%)" },
+    { "variant": "J-V: joint + structural checks", "valid": "43 / 50 (86%)", "invalid": "6 / 50 (12%)", "noCompletion": "1 / 50 (2%)" },
+    { "variant": "J: joint + hierarchical verifier", "valid": "45 / 50 (90%)", "invalid": "2 / 50 (4%)", "noCompletion": "3 / 50 (6%)" }
   ],
   "demos": [
-    { "title": "Semantic-node exploration", "description": "Planned: ranked node traversal followed by local object search.", "video": "" },
-    { "title": "Verifier-guided recovery", "description": "Planned: a failed grounding or waypoint followed by bounded recovery.", "video": "" },
-    { "title": "Repeated-task memory", "description": "Planned: compare first search with a later search using stored evidence.", "video": "" }
+    {
+      "id": "B06",
+      "theme": "Semantic-node search",
+      "title": "Bedroom cabinet: semantics vs. geometry order",
+      "description": "The same frozen backbone and start pose. G stops at kitchen cabinets; J reaches the dark cabinet in the bedroom. This illustrates semantic node visitation, not an isolated gain from constructing the skeleton.",
+      "image": "./media/case-b06.png",
+      "alt": "B06 task visualization with shared semantic backbone, sampled observation poses, a geometry-order false stop at kitchen cabinets, and joint-policy completion at the bedroom cabinet."
+    },
+    {
+      "id": "O09",
+      "theme": "Place-object joint ranking",
+      "title": "Office robot: object match in the wrong room",
+      "description": "O accepts a robot in the bedroom; J reaches the requested office robot. Both outcomes are externally reviewed against the literal instruction.",
+      "image": "./media/case-o09.png",
+      "alt": "O09 task visualization showing object-only search ending at a bedroom robot and joint ranking reaching the office robot."
+    },
+    {
+      "id": "L10",
+      "theme": "Hierarchical verification",
+      "title": "Sofa-side cabinet: an unsupported finish",
+      "description": "J-V reports completion in an empty transition corridor; J finishes beside the cabinet next to the sofa. This is one mechanism example, not proof that every rejected stop recovers.",
+      "image": "./media/case-l10.png",
+      "alt": "L10 task visualization showing a structural-only false stop in a corridor and visually verified completion at the sofa-side cabinet."
+    }
   ]
 }
