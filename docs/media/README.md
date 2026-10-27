@@ -1,11 +1,14 @@
 # Experiment media
 
-The three `case-*.png` files are publication visuals from the frozen
+The three current publication visuals are from the frozen
 50-case, five-policy evaluation on the first-floor exhibition scene:
 
-- B06: geometry-order G false stop vs. joint J valid bedroom-cabinet completion;
+- L01: graph-distance G no completion vs. place-guided P valid living-room washing-machine completion;
 - O09: object-only O wrong-room robot vs. joint J valid office-robot completion;
 - L10: structural J-V false stop vs. hierarchical J valid sofa-side-cabinet completion.
+
+`case-b06.png` is retained as an earlier qualitative example, but is no longer
+one of the three main-paper comparisons.
 
 Each visual is generated from the frozen eight-node topology, recorded
 top-down observation-pose markers, and retained terminal RGB frames by

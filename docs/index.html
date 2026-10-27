@@ -34,8 +34,8 @@
         </dl>
       </div>
       <figure class="hero-visual">
-        <img src="./assets/frozen-eight-node-backbone.png" alt="Frozen eight-node semantic backbone with the B06 paired task start, target, and terminal observation poses">
-        <figcaption>Actual frozen eight-node topology and B06 paired task evidence. Lines connect saved observation poses, not dense trajectories.</figcaption>
+        <img src="./assets/frozen-eight-node-backbone.png" alt="Frozen eight-node semantic backbone with the L01 paired task start, target, and terminal observation poses">
+        <figcaption>Actual frozen eight-node topology and L01 paired task evidence. Lines connect saved observation poses, not dense trajectories.</figcaption>
       </figure>
     </div>
   </header>
@@ -102,7 +102,7 @@
           <tbody id="ablation-body"></tbody>
         </table>
       </div>
-      <p class="fine-print">Every percentage uses the same 50 tasks per policy. External terminal-RGB review applies the literal place-and-object instruction. The scene has nine reused physical targets; these are selected stress cases, not a cross-building benchmark. P/O mask cues at initial ranking, while later replanning still sees the full instruction. Geometry, panoramic scan, and cross-task memory gains are not isolated by this comparison.</p>
+      <p class="fine-print">Every percentage uses the same 50 tasks per policy. G orders the shared fixed graph by distance; P ranks by place, O by object, and J jointly by place and object. J−V keeps joint ranking and structural/safety checks but omits the semantic Finish verifier; J includes it. All policies retain visual ObjectGoal execution. External terminal-RGB review applies the literal place-and-object instruction. The scene has nine reused physical targets; these are selected stress cases, not a cross-building benchmark. P/O mask cues at initial ranking, while later replanning still sees the full instruction. Skeleton extraction, panoramic scanning, and cross-task memory gains are not isolated by this comparison.</p>
     </section>
 
     <section class="section demos" id="demos">
