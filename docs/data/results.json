@@ -17,12 +17,12 @@
   ],
   "demos": [
     {
-      "id": "L01",
+      "id": "B06",
       "theme": "Place-guided search on a fixed graph",
-      "title": "Living-room washing machine: place cue vs. distance order",
-      "description": "On the same frozen backbone and from the same start, graph-distance order G does not finish after exploring the kitchen display; place-guided P reaches the requested living-room washing machine. This supports semantic node selection, not an isolated claim about skeleton construction or panoramic scanning.",
-      "image": "./media/case-l01.png",
-      "alt": "L01 paired task visualization showing graph-distance order G failing to complete in the kitchen display and place-guided P reaching the living-room washing machine."
+      "title": "Bedroom cabinet: wrong-place stop vs. place-guided completion",
+      "description": "From the same start and on the same frozen backbone, G stops at white kitchen cabinets although the request names the bedroom; P reaches the dark bedroom cabinet. Both retain visual ObjectGoal search and hierarchical checks. This illustrates place-guided selection, not an isolated gain from constructing or scanning the backbone.",
+      "image": "./media/case-b06.png",
+      "alt": "B06 paired task visualization showing graph-distance order G stopping at white kitchen cabinets and place-guided P completing at the dark bedroom cabinet."
     },
     {
       "id": "O09",
